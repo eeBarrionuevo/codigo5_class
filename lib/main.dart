@@ -61,13 +61,18 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
             onPressed: () {
               //Agregar una nueva persona
-              // people.add(
-              //   {
-              //     "name": "Pedro",
-              //     "address": "Cll Torres 123",
-              //     "phone": "987111222",
-              //   },
-              // );
+              Person elvis = Person(
+                name: "Elvis",
+                address: "Cll 112",
+                phone: "12323",
+              );
+              people.add(
+                Person(
+                  name: "Daniel",
+                  address: "Av Lima 123",
+                  phone: "12323",
+                ),
+              );
               setState(() {});
             },
             child: Text("Agregar"),
