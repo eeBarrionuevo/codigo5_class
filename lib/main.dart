@@ -30,6 +30,8 @@ class _HomePageState extends State<HomePage> {
     people: [],
   );
 
+  getData() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,21 +41,27 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: <Widget>[
+          Text(
+            tecsup.name,
+            style: const TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
           ElevatedButton(
             onPressed: () {
-              //Agregar una nueva persona
-              people.add(
+              tecsup.people.add(
                 Person(
-                  name: "Daniel",
-                  address: "Av Lima 123",
-                  phone: "12323",
+                  name: "Elvis",
+                  address: "Av. Lima 123",
+                  phone: "12121212",
                 ),
               );
               setState(() {});
             },
-            child: Text("Agregar"),
+            child: const Text("Agregar persona"),
           ),
-          ...people
+          ...tecsup.people
               .map(
                 (e) => ListTile(
                   leading: CircleAvatar(
