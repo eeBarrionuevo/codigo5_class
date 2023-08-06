@@ -1,3 +1,4 @@
+import 'package:codigo5_class/institution.dart';
 import 'package:codigo5_class/person.dart';
 import 'package:flutter/material.dart';
 
@@ -20,34 +21,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> names = [
-    "Eddy",
-    "Carlos ",
-    "Isabel ",
-    "Jose",
-    "Miguel",
-    "Adrian",
-  ];
-
-  Person pepe = Person(name: "José", address: "Av. Lima", phone: "12323");
-  Person manolo = Person(name: "José", address: "Av. Lima", phone: "12323");
-  Person fiorella = Person(name: "José", address: "Av. Lima", phone: "12323");
-  Person luis = Person(name: "José", address: "Av. Lima", phone: "12323");
-  Person elvis = Person(name: "José", address: "Av. Lima", phone: "12323");
-
-  // List<Map<String, dynamic>> people = [
-  //   {"name": "Adrian", "address": "Av. Cayma 123", "phone": "987122333"},
-  //   {"name": "Eddy", "address": "Av. Lima 6565", "phone": "987122666"},
-  //   {"name": "Isabel", "address": "Av. Torres 333", "phone": "987122222"},
+  // List<Person> people = [
+  //   Person(name: "Juan", address: "Av. Lima", phone: "12321323"),
   // ];
 
-  List<Person> people = [
-    Person(name: "Juan", address: "Av. Lima", phone: "12321323"),
-    Person(name: "Juan", address: "Av. Lima", phone: "12321323"),
-    Person(name: "Juan", address: "Av. Lima", phone: "12321323"),
-    Person(name: "Juan", address: "Av. Lima", phone: "12321323"),
-    Person(name: "Juan", address: "Av. Lima", phone: "12321323"),
-  ];
+  Institution tecsup = Institution(
+    name: "Tecsup",
+    people: [],
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +42,6 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
             onPressed: () {
               //Agregar una nueva persona
-              Person elvis = Person(
-                name: "Elvis",
-                address: "Cll 112",
-                phone: "12323",
-              );
               people.add(
                 Person(
                   name: "Daniel",
