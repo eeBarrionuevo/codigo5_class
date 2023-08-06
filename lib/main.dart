@@ -37,15 +37,11 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              Institution utp = Institution(
-                name: "UTP",
+              Institution data = Institution(
+                name: "UNSA",
                 people: [],
               );
-              Institution pucp = Institution(
-                name: "UPN",
-                people: [],
-              );
-              institutions.add(pucp);
+              institutions.add(data);
               setState(() {});
             },
             icon: const Icon(Icons.add),
@@ -55,10 +51,10 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: institutions
             .map(
-              (e) => Column(
+              (institution) => Column(
                 children: <Widget>[
                   Text(
-                    "${e.name} (${e.people.length})",
+                    "${institution.name} (${institution.people.length})",
                     style: const TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.w700,
@@ -66,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      e.people.add(
+                      institution.people.add(
                         Person(
                           name: "Luis",
                           address: "Av. Lima 123",
@@ -77,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: const Text("Agregar persona"),
                   ),
-                  ...e.people
+                  ...institution.people
                       .map(
                         (e) => ListTile(
                           leading: CircleAvatar(
@@ -111,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                                   // tecsup.people.removeLast(); // Eliminar el último elemento
                                   // tecsup.people.removeRange(0, 3); // Eliminar por rango
                                   // tecsup.people.removeAt(1);
-                                  // e.people.remove(e);
+                                  institution.people.remove(e);
                                   setState(() {});
                                 },
                               ),
