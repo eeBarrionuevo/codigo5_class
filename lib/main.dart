@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               tecsup.people.add(
                 Person(
-                  name: "Elvis",
+                  name: "Luis",
                   address: "Av. Lima 123",
                   phone: "12121212",
                 ),
@@ -74,14 +74,16 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       IconButton(
                         icon: const Icon(Icons.edit),
-                        onPressed: () {
-                          print("Eliminando...");
-                        },
+                        onPressed: () {},
                       ),
                       IconButton(
                         icon: const Icon(Icons.delete),
                         onPressed: () {
-                          print("Eliminando...");
+                          // tecsup.people.removeLast(); // Eliminar el último elemento
+                          // tecsup.people.removeRange(0, 3); // Eliminar por rango
+                          // tecsup.people.removeAt(1);
+                          tecsup.people.remove(e);
+                          setState(() {});
                         },
                       ),
                     ],
