@@ -74,7 +74,20 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       IconButton(
                         icon: const Icon(Icons.edit),
-                        onPressed: () {},
+                        onPressed: () {
+                          e.name = "Daniel";
+                          e.address = "Av. Arequipa  123";
+                          e.phone = "999000999";
+
+                          // e = Person(
+                          //     name: "Juan",
+                          //     address: "Av. Cayma 123",
+                          //     phone: "22344232");
+
+                          print(e.name);
+
+                          setState(() {});
+                        },
                       ),
                       IconButton(
                         icon: const Icon(Icons.delete),
