@@ -68,8 +68,13 @@ class _HomePageState extends State<HomePage> {
                     child: Text(e.name[0]),
                   ),
                   title: Text(e.name),
-                  subtitle: Text(e.address),
-                  trailing: Text(e.phone),
+                  subtitle: Text("${e.address} | ${e.phone}"),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: () {
+                      print("Eliminando...");
+                    },
+                  ),
                 ),
               )
               .toList(),
